@@ -26,7 +26,7 @@ For ANY task involving understanding, searching, tracing, or analyzing project c
 
 **Broad to narrow**: graph tools → text search (regex) / LSP usages → file reads (only when path is known).
 
-**Git history**: Delegate to `#tool:GitOps` for blame, log, and commit analysis.
+**Git history**: Delegate to `#agent:GitOps` for blame, log, and commit analysis.
 
 **Speed principles**:
 - Parallelize independent tool calls
