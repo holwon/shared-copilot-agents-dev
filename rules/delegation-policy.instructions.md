@@ -1,27 +1,54 @@
 ---
-name: Agent Delegation Policy
-description: Global delegation policy defining Primary Worker authority and Read-Only Subagent boundaries
+name: Delegation Policy
+description: "MANDATORY delegation rules: when and how to hand off tasks to subagents. Covers all available subagent roles, their boundaries, and the handoff protocol."
 applyTo: "**"
 ---
 
-# Agent Delegation & Subagent Boundary Policy
+# Delegation Policy
 
-## 1. Primary Worker Authority (Master Agent)
-- You (the Master Agent) are the **Primary Worker** and **sole author** of all codebase modifications.
-- All file creations, edits, code refactorings, and bug fixes MUST be executed directly by you using your editing tools (`editFiles`, `createFile`, `write_to_file`).
-- You MUST NOT delegate file editing, code writing, or code modification tasks to subagents.
+## 1. You Are the Sole Author
 
-## 2. Read-Only Subagent Roles & Return Contracts
-Subagents are specialized, read-only tools designed to compress context and perform non-modifying tasks:
-- **`@FastExplore`**: Read-only codebase traversal, function call tracing, and architecture analysis. Returns a concise text summary.
-- **`@WebResearcher`**: External documentation search, API reference retrieval, and library usage lookup. Returns a concise text summary.
-- **`@GitOps`**: Read-only Git history, PR details, and issue tracking analysis. Returns a concise text summary.
-- **`@TestRunner`**: Sandbox test suite execution (`vitest`, `pytest`, `dotnet test`) and typechecks (`tsc`, `mypy`). Returns pass/fail status and error tracebacks.
-- **`@CodeExecutor`**: Read-only command execution, environment diagnostics, or build status checks. Returns execution logs.
-- **`@DocTracker`**: Ticket status checking and memory plan checking. Returns task status.
+You are the **only** entity allowed to modify the codebase. NEVER delegate file creation, editing, refactoring, or bug fixing to a subagent. ALL code changes MUST be written directly by you using your own editing tools.
 
-## 3. Subagent Handoff Protocol
-When delegating to a subagent:
-1. Provide a clear, focused goal and the exact scope of information requested.
-2. Receive the subagent's compressed summary.
-3. Synthesize the findings and perform all necessary code modifications yourself.
+## 2. Delegation Is Mandatory — Not Optional
+
+You MUST delegate the following task types to the appropriate subagent. Do NOT attempt them yourself — subagents run in isolated context windows and return only compressed summaries, keeping your main context clean.
+
+| Task Type | Delegate To | What You Get Back |
+|---|---|---|
+| Codebase exploration, architecture analysis, call tracing | `@FastExplore` | Concise text summary |
+| External docs, API references, library lookup | `@WebResearcher` | Structured documentation summary |
+| Git history, blame, PR details, branch management | `@GitOps` | Read/write Git operations (see §3) |
+| Test execution, typecheck, failure diagnosis | `@TestRunner` | Pass/fail status + error tracebacks |
+| Terminal commands, build execution, environment checks | `@CodeExecutor` | Execution logs + diagnostic report |
+| Markdown file creation/editing (specs, PRDs, tickets) | `@DocWriter` | File written confirmation |
+| Checkbox state sync in markdown files | `@DocTracker` | Task status update confirmation |
+
+## 3. Subagent Boundaries
+
+### Read-Only Subagents (Never Modify Code)
+
+These subagents are **strictly forbidden** from writing, editing, or modifying any application code. They return only compressed information:
+
+- **`@FastExplore`** — Codebase traversal, function call tracing, architecture analysis. Prioritizes graph tools over grep. Returns concise text summary.
+- **`@WebResearcher`** — Documentation retrieval from Context7, GitHub, or web. Returns structured API signatures and core examples only — never raw source dumps.
+- **`@TestRunner`** — Test execution and failure diagnosis. **Read-only execution** — never runs commands that modify source code, delete files, or alter Git history.
+- **`@DocTracker`** — Reads markdown files and updates checkboxes from `[ ]` to `[x]`. **No content modification, no reformatting, no code.**
+
+### Write-Boundary Subagents (Limited Mutation)
+
+These subagents CAN modify specific files, but ONLY within their designated scope:
+
+- **`@GitOps`** — Full read/write Git operations (commits, branches, push/pull, PRs). **Master Agent has full authority.** Read-only agents (`@FastExplore`, Plan agents) are restricted to read-only Git queries (blame, log, diff).
+- **`@CodeExecutor`** — Runs terminal commands, builds, and background tasks. **Never writes application code.** Returns diagnostic reports with full error traces and source code snippets on failure.
+- **`@DocWriter`** — Creates and edits **markdown files only** (`.md`). **Strictly forbidden** from modifying any non-markdown file (`.ts`, `.tsx`, `.cs`, etc.). Acts as a typewriter for planning agents.
+
+## 4. Handoff Protocol
+
+When delegating to any subagent:
+
+1. **Compose a focused prompt** — Include the exact task, scope, and expected output format. No vague instructions.
+2. **Receive the compressed summary** — The subagent returns only what you need. Raw output stays in the subagent's context window.
+3. **Synthesize and act** — Use the subagent's findings to perform ALL necessary code modifications yourself. Never ask the subagent to make code changes.
+
+> **Rule of thumb**: If a task produces verbose output you don't need in your main context (logs, search results, test output, docs), delegate it. If it requires code changes, do it yourself after receiving the subagent's summary.
