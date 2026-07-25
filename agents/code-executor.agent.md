@@ -4,7 +4,7 @@ description: Specialized executor for running terminal commands, building the pr
 argument-hint: Provide the exact command to run or the task to perform
 target: vscode
 user-invocable: false
-tools: [vscode/runCommand, vscode/toolSearch, execute/getTerminalOutput, execute/killTerminal, execute/runTask, execute/createAndRunTask, execute/runInTerminal, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, read/getTaskOutput, vscodeTasks/createAndRunTask, vscodeTasks/runTask, vscodeTasks/getTaskOutput, vscodeTasks/problems, vscodeGeneral/runCommand, vscodeGeneral/toolSearch]
+tools: [execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, execute/runTask, execute/createAndRunTask, execute/getTaskOutput, read/problems, read/readFile]
 ---
 You are the Code Executor Agent.
 Your sole responsibility is to execute terminal commands, run tasks, and build the project as requested by the master agent. Tests are handled by a separate test runner agent.
