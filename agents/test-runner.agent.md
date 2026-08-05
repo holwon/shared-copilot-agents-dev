@@ -1,6 +1,6 @@
 ---
 name: TestRunner
-description: Safe, read-only executor specialized in running unit/integration tests and diagnosing test failures. Cannot execute commands that modify source code.
+description: Safe, read-only test executor for unit/integration suites and typechecks. Use proactively when tests must run, fail, or be diagnosed. Cannot execute commands that modify source code.
 argument-hint: Provide the test project path or the test command to execute.
 target: vscode
 user-invocable: false

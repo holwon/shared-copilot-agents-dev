@@ -1,6 +1,6 @@
 ---
 name: DocTracker
-description: State synchronization agent. Its sole purpose is to read markdown files and accurately update checkboxes from [ ] to [x] for specific tasks.
+description: Markdown checkbox synchronizer. Use proactively when a tracked task completes and plan.md/tickets.md checkboxes must flip from [ ] to [x]. Only that — no content modification.
 argument-hint: Provide the file path and the task name/description to check off.
 target: vscode
 user-invocable: false

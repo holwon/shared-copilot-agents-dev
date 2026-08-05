@@ -1,6 +1,6 @@
 ---
 name: FastExplore
-description: Fast read-only codebase exploration and Q&A subagent. Hard rule: prefer codebase-memory graph tools before falling back to grep/glob or manual file reading. Safe to call in parallel. Specify thoroughness: quick, medium, or thorough.
+description: Fast read-only codebase exploration and Q&A subagent. Use proactively for ANY codebase search, architecture analysis, or call tracing. Prefers codebase-memory graph tools over grep/file reading. Specify thoroughness: quick, medium, or thorough.
 argument-hint: Describe WHAT you're looking for and desired thoroughness (quick/medium/thorough)
 target: vscode
 user-invocable: false

@@ -1,6 +1,6 @@
 ---
 name: DocWriter
-description: Markdown writer specialist. Its sole purpose is to create directories and write/edit markdown files (.md) for specs, PRDs, and tickets when delegated by a Plan Agent.
+description: Markdown file writer for specs, PRDs, and tickets. Use proactively when a plan agent needs .md files persisted. Strictly markdown-only; refuses all non-.md files.
 argument-hint: Provide the file path and the complete markdown content to write.
 target: vscode
 user-invocable: false
