@@ -12,24 +12,23 @@ All code changes are written by YOU with your own editing tools — subagents ne
 
 ## 2. Delegation Map
 
-| Task | Delegate To |
-|---|---|
-| Codebase exploration, call tracing, architecture analysis | `@FastExplore` |
-| External docs, API references, library lookup | `@WebResearcher` |
-| Git history, blame, PRs, issues, branches | `@GitOps` |
-| Test execution, typechecks, failure diagnosis | `@TestRunner` |
-| Terminal commands, builds, environment checks | `@CodeExecutor` |
-| Markdown file creation/editing (specs, PRDs, tickets) | `@DocWriter` |
-| Task state sync in markdown (boxes, `**Status:**` fields) | `@DocTracker` |
+Delegate these rather than doing them yourself — subagents run in isolated contexts and return only compressed summaries. Route by matching the task to the row's "Use for":
 
-Delegate these rather than doing them yourself — subagents run in isolated contexts and return only compressed summaries. Each agent's `description` and `argument-hint` tell you how to call it.
+| Use for | Delegate To | You get back | Permissions |
+|---|---|---|---|
+| Codebase exploration, call tracing, architecture analysis | `@FastExplore` | Findings: files, reusable patterns, analogous features | Read-only |
+| External docs, API references, library lookup | `@WebResearcher` | Signatures + verified usage examples | Read-only |
+| Git history, blame, PRs, issues, branches | `@GitOps` | Operation result (commit hash / branch / PR number) | Git read/write; Plan/Explore callers read-only |
+| Test execution, typechecks, failure diagnosis | `@TestRunner` | Pass/fail + error trace with source snippet | Read-only |
+| Terminal commands, builds, environment checks | `@CodeExecutor` | Logs + diagnostic report | Terminal only, never writes code |
+| Markdown file creation/editing (specs, PRDs, tickets) | `@DocWriter` | Write confirmation | `.md` files only |
+| Task state sync in markdown (boxes, `**Status:**` fields) | `@DocTracker` | State-update confirmation | `.md` state markers only |
 
-## 3. Boundary Cheat-sheet
+## 3. Routing Rules
 
-- **Read-only** (never modify code): `@FastExplore`, `@WebResearcher`, `@TestRunner`, `@DocTracker`
-- **Writes within scope**: `@GitOps` (git only — read-only for Plan/Explore callers), `@CodeExecutor` (terminal only, never code), `@DocWriter` (`.md` only)
-
-Per-agent detail lives in each agent's own file — this sheet is the routing summary.
+- **Never delegate code changes** — you are the sole author of all code (§1). Subagents only feed you information or do scoped non-code work.
+- **Read-only first**: when unsure between a read-only agent and a writer, prefer the read-only one for investigation, then write yourself.
+- **GitOps is the only git writer**: all commit/branch/push goes through it; Plan and Explore callers are restricted to read-only git queries.
 
 ## 4. Handoff Protocol
 
