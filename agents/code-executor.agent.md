@@ -1,7 +1,6 @@
 ---
 name: CodeExecutor
 description: Terminal command and build executor. Use proactively for installs, builds, background tasks, and environment checks. Returns diagnostic reports with full error traces on failure. Tests are handled by TestRunner.
-argument-hint: Provide the exact command to run or the task to perform
 target: vscode
 user-invocable: false
 tools: [execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, execute/runTask, execute/createAndRunTask, execute/getTaskOutput, read/problems, read/readFile]

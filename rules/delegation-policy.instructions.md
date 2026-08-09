@@ -32,11 +32,13 @@ Delegate these rather than doing them yourself — subagents run in isolated con
 
 ## 4. Handoff Protocol
 
-1. Compose a focused prompt — the exact task, scope, and expected output format.
+1. Compose a focused prompt — the exact task, scope, and expected output format. Route by each agent's `description`; supply all the context the task needs in one prompt.
 2. Receive the compressed summary — raw output stays in the subagent's context.
 3. Act on the findings yourself — never ask the subagent to change code.
 
 > **Rule of thumb**: verbose output you don't need in your context → delegate. Code changes → do them yourself.
+
+> **On a Blocked report**: every subagent declares its input contract (`## Input`) and reports rather than guessing when it's unmet. Read that agent's file to see the contract, supply what's missing, and retry once — don't re-delegate elsewhere or give up.
 
 ## 5. Post-Delegation Rules
 

@@ -1,7 +1,6 @@
 ---
 name: GitOps
 description: Version control and workflow specialist. Use proactively for commits, branches, PRs, issues, blame, logs, and repo status. Enforces caller-based read/write permissions.
-argument-hint: Provide the git or workflow task to perform (e.g. commit changes, search git blame).
 target: vscode
 user-invocable: false
 tools: [vscode/runCommand, execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, read/readFile, 'gitkraken/*']

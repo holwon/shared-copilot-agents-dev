@@ -1,7 +1,6 @@
 ---
 name: WebResearcher
 description: Information retrieval agent for external docs, API references, and library lookups. Use proactively when answers require web sources or third-party package knowledge. Returns structured summaries, never raw source dumps.
-argument-hint: Provide the URL or topic to research
 target: vscode
 user-invocable: false
 tools: [read/readFile, search, web, 'github/*', 'io.github.upstash/context7/*', 'firecrawl/firecrawl-mcp-server/*']

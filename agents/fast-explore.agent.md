@@ -1,7 +1,6 @@
 ---
 name: FastExplore
 description: Fast read-only codebase exploration and Q&A subagent. Use proactively for ANY codebase search, architecture analysis, or call tracing. Prefers codebase-memory graph tools over grep/file reading. Specify thoroughness: quick, medium, or thorough.
-argument-hint: Describe WHAT you're looking for and desired thoroughness (quick/medium/thorough)
 target: vscode
 user-invocable: false
 tools: [vscode/memory, execute/getTerminalOutput, read, search, 'codebase-memory-mcp/*', agent]
