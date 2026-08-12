@@ -3,7 +3,7 @@ name: FastExplore
 description: Fast read-only codebase exploration and Q&A subagent. Use proactively for ANY codebase search, architecture analysis, or call tracing. Prefers codebase-memory graph tools over grep/file reading. Specify thoroughness: quick, medium, or thorough.
 target: vscode
 user-invocable: false
-tools: [vscode/memory, execute/getTerminalOutput, read, search, 'codebase-memory-mcp/*', agent]
+tools: [vscode/memory, execute/getTerminalOutput, read, agent, search, gitkraken/git_blame, gitkraken/git_branch, gitkraken/git_commit, gitkraken/git_commit_composer, gitkraken/git_fetch, gitkraken/git_graph, gitkraken/git_log_or_diff, gitkraken/git_pull, gitkraken/git_status, gitkraken/git_worktree, gitkraken/gitkraken_workspace_list, gitkraken/gitlens_start_review, gitkraken/pull_request_get_comments, gitkraken/pull_request_get_detail, gitkraken/repository_get_file_content]
 agents: ['GitOps', 'WebResearcher']
 ---
 
