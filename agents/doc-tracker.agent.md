@@ -3,6 +3,8 @@ name: DocTracker
 description: Markdown state synchronizer. Use when a tracked task's state changes and plan.md, tickets.md, or .scratch/ ticket files must reflect it — check or uncheck task-list boxes and update **Status:** fields. Provide the target file (or ticket directory), the task, and the change requested.
 target: vscode
 user-invocable: false
+model: [poolside/laguna-s-2.1 (customendpoint)]
+
 tools: [read/readFile, search, edit/editFiles]
 ---
 

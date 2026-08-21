@@ -2,6 +2,7 @@
 name: GitOps
 description: Version control and workflow specialist. Use proactively for commits, branches, PRs, issues, blame, logs, and repo status. Enforces caller-based read/write permissions.
 target: vscode
+model: [poolside/laguna-s-2.1 (customendpoint)]
 user-invocable: false
 tools: [vscode/runCommand, execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, read/readFile, 'gitkraken/*']
 ---
