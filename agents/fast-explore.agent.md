@@ -6,7 +6,7 @@ user-invocable: false
 model: poolside/laguna-s-2.1 (customendpoint)
 tools: [vscode/memory, read, agent, search, 'codebase-memo/*']
 agents:
-  - GitOps
+  - GitReader
   - WebResearcher
 ---
 
@@ -28,7 +28,7 @@ Adapt depth to caller's request (`quick` = 1-2 targeted lookups; `medium` (defau
 
 ## Delegation Protocol
 
-- **Delegate to `@GitOps`**: ONLY when historical context is required (e.g., blame, commit messages, when/why a change was introduced, branch diffs).
+- **Delegate to `@GitReader`**: ONLY when historical context is required (e.g., blame, commit messages, when/why a change was introduced, branch diffs).
 - **Delegate to `@WebResearcher`**: ONLY for external documentation, 3rd-party library APIs, or framework specs not in the local repo.
 - **Do not delegate** for any local codebase analysis.
 

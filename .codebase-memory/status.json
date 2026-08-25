@@ -5,10 +5,10 @@
   "project_display_name": "shared-copilot-agents-dev",
   "project_aliases": [],
   "root_path": "C:/Users/Administrator/.vscode/agent-plugins/github.com/holwon/shared-copilot-agents-dev",
-  "nodes": 50809,
-  "edges": 125234,
+  "nodes": 52472,
+  "edges": 127503,
   "size_bytes": 0,
-  "last_indexed": "2026-08-24T09:52:28.796Z",
+  "last_indexed": "2026-08-25T09:24:37.075Z",
   "is_indexing": false,
   "cache_dir": "C:/Users/Administrator/.cache/codebase-memory-mcp"
 }
