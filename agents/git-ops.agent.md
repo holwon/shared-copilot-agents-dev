@@ -2,7 +2,7 @@
 name: GitOps
 description: Git workflow execution specialist for repository operations, commits, branches, history, diffs, pushes, and pull requests with caller-based access control.
 target: vscode
-model: "dots3-note-prev (customendpoint)"
+model: poolside/laguna-s-2.1 (customendpoint)
 user-invocable: false
 tools:
   - vscode/runCommand

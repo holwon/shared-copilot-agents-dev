@@ -2,7 +2,7 @@
 name: WebResearcher
 description: External technical research specialist for official documentation, third-party libraries, APIs, external source references, and framework specifications.
 target: vscode
-model: "dots3-note-prev (customendpoint)"
+model: poolside/laguna-s-2.1 (customendpoint)
 user-invocable: false
 tools:
   - web
