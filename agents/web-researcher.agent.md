@@ -2,7 +2,7 @@
 name: WebResearcher
 description: Official documentation, third-party library APIs, framework specifications, and public source lookup. Use for external SDKs, package docs, and type definitions.
 target: vscode
-model: poolside/laguna-s-2.1 (customendpoint)
+model: Hunyuan 3 (codebuddy)
 user-invocable: false
 tools:
   - web

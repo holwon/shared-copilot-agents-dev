@@ -2,7 +2,7 @@
 name: GitOps
 description: Git write operation specialist for executing repository operations, commits, branches, switches, merges, pushes, and PR workflows with safety guards.
 target: vscode
-model: [gemma4:cloud (ollama-models), poolside/laguna-s-2.1 (customendpoint)]
+model: [gemma4:cloud (ollama-models), Hunyuan 3 (codebuddy)]
 user-invocable: false
 tools:
   - vscode/runCommand
