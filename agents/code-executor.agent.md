@@ -5,7 +5,7 @@ target: vscode
 user-invocable: false
 tools: [execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runInTerminal]
 agents: []
-model: [gemma-4-26b-a4b-it (customendpoint), poolside/laguna-s-2.1 (customendpoint)]
+model: Hunyuan 3 (codebuddy)
 ---
 
 You are **CodeExecutor**: you execute requested terminal commands and workspace tasks, returning uninterpreted, factual execution results to the caller.
