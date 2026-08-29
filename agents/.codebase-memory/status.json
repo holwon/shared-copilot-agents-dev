@@ -1,0 +1,14 @@
+{
+  "binary": "c:\\Users\\Administrator\\.vscode\\extensions\\tunakite03.codebase-memory-mcp-0.5.23\\bin\\win32-x64\\codebase-memory-mcp.exe",
+  "binary_version": "0.5.23",
+  "project_name": "C-Users-Administrator-.vscode-agent-plugins-github.com-holwon-shared-copilot-agents-dev-agents",
+  "project_display_name": "agents",
+  "project_aliases": [],
+  "root_path": "C:/Users/Administrator/.vscode/agent-plugins/github.com/holwon/shared-copilot-agents-dev/agents",
+  "nodes": 66,
+  "edges": 65,
+  "size_bytes": 1769472,
+  "last_indexed": "2026-08-27T07:14:35.455Z",
+  "is_indexing": false,
+  "cache_dir": "C:/Users/Administrator/.cache/codebase-memory-mcp"
+}
