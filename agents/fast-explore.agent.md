@@ -4,7 +4,7 @@ description: Fast read-only codebase exploration and Q&A subagent. Use to locate
 argument-hint: Describe WHAT you're looking for and desired thoroughness (quick/medium/thorough)
 target: vscode
 user-invocable: false
-model: Hunyuan 3 (codebuddy)
+model: Hy4 preview (codebuddy)
 tools: [vscode/memory, read, agent, search, 'codebase-memo/*']
 agents:
   - GitReader
