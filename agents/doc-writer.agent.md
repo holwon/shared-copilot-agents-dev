@@ -2,7 +2,7 @@
 name: DocWriter
 description: Markdown file writer for specs, PRDs, and tickets. Use proactively when a plan agent needs .md files persisted. Strictly markdown-only; refuses all non-.md files.
 target: vscode
-model: Hy4 preview (codebuddy)
+model: Hy3 (hy3) (x0.00) (codebuddy)
 user-invocable: false
 tools: [read/readFile, edit/createDirectory, edit/createFile, edit/editFiles]
 agents: []

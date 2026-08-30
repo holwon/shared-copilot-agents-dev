@@ -2,7 +2,7 @@
 name: GitReader
 description: Read-only Git history, blame, diff, log, and repository state inspector for exploration and historical context.
 target: vscode
-model: [gemma4:cloud (ollama-models), Hy4 preview (codebuddy)]
+model: ['gemma4:cloud (ollama-models)', 'Hy3 (hy3) (x0.00) (codebuddy)']
 user-invocable: false
 tools:
   - execute/runInTerminal

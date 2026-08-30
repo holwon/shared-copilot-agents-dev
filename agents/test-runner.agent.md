@@ -3,7 +3,7 @@ name: TestRunner
 description: Safe, read-only test executor for unit/integration suites and typechecks. Use proactively when tests must run, fail, or be diagnosed. Cannot execute commands that modify source code.
 target: vscode
 user-invocable: false
-model: Hy4 preview (codebuddy)
+model: Hy3 (hy3) (x0.00) (codebuddy)
 tools: [execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, execute/runTests, execute/testFailure, read/problems, read/readFile]
 agents: []
 ---
