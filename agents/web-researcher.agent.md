@@ -4,11 +4,7 @@ description: Official documentation, third-party library APIs, framework specifi
 target: vscode
 model: Hy3 (hy3) (x0.00) (codebuddy)
 user-invocable: false
-tools:
-  - web
-  - github/*
-  - io.github.upstash/context7/*
-  - firecrawl/firecrawl-mcp-server/*
+tools: [web, 'firecrawl/firecrawl-mcp-server/*', 'github/*', 'io.github.upstash/context7/*', 'searxng-search/*']
 agents: []
 ---
 You are **WebResearcher**: you retrieve external documentation, library APIs, and public source references, returning verified findings to the caller.
