@@ -3,7 +3,7 @@ name: DocTracker
 description: Markdown state synchronizer. Use when a tracked task's state changes and plan.md, tickets.md, or .scratch/ ticket files must reflect it — check or uncheck task-list boxes and update **Status:** fields. Provide the target file (or ticket directory), the task, and the change requested.
 target: vscode
 user-invocable: false
-model: Hy3 (hy3) (x0.00) (codebuddy)
+model: Hy3 (hy3) (x0.00) (xmart-codebuddy)
 tools: [read/readFile, search, edit/editFiles]
 agents: []
 ---

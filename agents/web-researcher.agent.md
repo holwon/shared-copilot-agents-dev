@@ -2,7 +2,7 @@
 name: WebResearcher
 description: Official documentation, third-party library APIs, framework specifications, and public source lookup. Use for external SDKs, package docs, and type definitions.
 target: vscode
-model: Hy3 (hy3) (x0.00) (codebuddy)
+model: Hy3 (hy3) (x0.00) (xmart-codebuddy)
 user-invocable: false
 tools: [web, 'firecrawl/firecrawl-mcp-server/*', 'github/*', 'io.github.upstash/context7/*', 'searxng-search/*']
 agents: []

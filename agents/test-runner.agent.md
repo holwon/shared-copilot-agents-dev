@@ -3,7 +3,7 @@ name: TestRunner
 description: Strictly read-only test executor for unit/integration suites and typechecks. Executes ONLY the single caller-provided test command. Strictly forbidden from modifying files, fixing code, or running secondary commands.
 target: vscode
 user-invocable: false
-model: Hy3 (hy3) (x0.00) (codebuddy)
+model: Hy3 (hy3) (x0.00) (xmart-codebuddy)
 tools: [execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, execute/runTests, execute/testFailure, read/problems, read/readFile]
 agents: []
 ---
