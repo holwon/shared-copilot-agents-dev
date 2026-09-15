@@ -52,6 +52,11 @@ mcp_codebase-memo_get_code_snippet({ "project": "<display_name>", "qualified_nam
 
 ## Search Strategy
 
+> Rule: Code Usage-First Search (`../rules/code-usage-first.instructions.md`) applies — prefer symbol-aware queries over blind keyword search in every code-understanding task.
+
+- **Symbol-aware first (usages/preferred)**:
+  - When you hold ANY occurrence of a symbol, resolve it precisely — via `codebase-memo` graph queries (`search_graph` callers/implementations, `trace_path`) or `vscode/memory` usages — instead of grepping for the name.
+  - Trace "who calls X", "where is X defined/implemented", and rename impact from the symbol, not from keyword matches.
 - **Go broad to narrow**:
   1. Start with structural/semantic search (`vscode/memory` or `codebase-memo/*`) or glob patterns to discover relevant areas.
   2. Narrow with text search (`search`) for exact symbols, routes, or config keys.
