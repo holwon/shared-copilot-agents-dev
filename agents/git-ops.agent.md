@@ -2,7 +2,7 @@
 name: GitOps
 description: Git write operation specialist for executing repository operations, commits, branches, switches, merges, pushes, and PR workflows with safety guards.
 target: vscode
-model: SubDefault (agent)
+model: GitOps (agent)
 user-invocable: false
 tools:
   - vscode/runCommand

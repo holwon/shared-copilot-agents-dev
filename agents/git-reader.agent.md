@@ -2,7 +2,7 @@
 name: GitReader
 description: Read-only Git history, blame, diff, log, and repository state inspector for exploration and historical context.
 target: vscode
-model: SubDefault (agent)
+model: GitReader (agent)
 user-invocable: false
 tools:
   - execute/runInTerminal
