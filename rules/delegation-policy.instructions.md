@@ -22,7 +22,6 @@ Delegate these rather than doing them yourself — subagents run in isolated con
 | Git commits, branching, switches, push, PR creation | `@GitOps` | Operation result (commit hash / branch / PR number) | Git write (Master only) |
 | Test execution, typechecks, failure diagnosis | `@TestRunner` | Pass/fail + error trace with source snippet | Read-only |
 | Terminal commands, builds, environment checks | `@CodeExecutor` | Logs + diagnostic report | Terminal only, never writes code |
-| Markdown file creation/editing (specs, PRDs, tickets) | `@DocWriter` | Write confirmation | `.md` files only |
 | Task state sync in markdown (boxes, `**Status:**` fields) | `@DocTracker` | State-update confirmation | `.md` state markers only |
 
 ## 3. Routing Rules
