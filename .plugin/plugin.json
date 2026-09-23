@@ -1,7 +1,7 @@
 {
 	"name": "shared-copilot-agents-dev",
 	"version": "1.0.0",
-	"description": "Reusable subagent pool: exploration, research, execution, testing, git, and doc agents with delegation policy.",
+	"description": "Reusable subagent pool: exploration, research, execution, testing, and git agents with delegation policy.",
 	"agents": "agents/",
 	"skills": "skills/"
 }
