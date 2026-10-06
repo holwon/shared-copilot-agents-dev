@@ -5,12 +5,12 @@ target: vscode
 model: GitOps (agent)
 user-invocable: false
 tools:
-  - vscode/runCommand
   - execute/runInTerminal
   - execute/getTerminalOutput
   - execute/killTerminal
   - read/readFile
   - gitkraken/*
+  - execute/sendToTerminal
 agents: []
 ---
 

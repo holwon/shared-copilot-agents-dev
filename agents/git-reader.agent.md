@@ -10,6 +10,7 @@ tools:
   - execute/killTerminal
   - read/readFile
   - gitkraken/*
+  - execute/sendToTerminal
 agents: []
 ---
 

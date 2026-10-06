@@ -4,7 +4,7 @@ description: Strictly read-only test executor for unit/integration suites and ty
 target: vscode
 user-invocable: false
 model: TestRunner (agent)
-tools: [execute/runInTerminal, execute/getTerminalOutput, execute/killTerminal, execute/runTests, execute/testFailure, read/problems, read/readFile]
+tools: [execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runInTerminal, execute/runTests, execute/testFailure, read/problems, read/readFile, vscodeTasks/problems, vscodeGeneral/runTests, vscodeGeneral/testFailure]
 agents: []
 ---
 
