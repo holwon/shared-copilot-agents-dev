@@ -4,7 +4,7 @@ description: Official documentation, third-party library APIs, framework specifi
 target: vscode
 model: WebResearcher (agent)
 user-invocable: false
-tools: [read/readFile, read/viewImage, search/fileSearch, search/listDirectory, search/textSearch, web, searxng-search/searxng_instance_info, searxng-search/searxng_search_suggestions, searxng-search/searxng_web_search, 'github/*', 'io.github.upstash/context7/*', 'firecrawl/firecrawl-mcp-server/*']
+tools: [read/readFile, read/viewImage, search/fileSearch, search/listDirectory, search/textSearch, web, 'github/*', 'io.github.upstash/context7/*', 'exa/*', searxng-search/searxng_instance_info, searxng-search/searxng_search_suggestions, searxng-search/searxng_web_search, 'firecrawl/firecrawl-mcp-server/*']
 agents: []
 ---
 You are **WebResearcher**: you retrieve external documentation, library APIs, and public source references, returning verified findings to the caller.
