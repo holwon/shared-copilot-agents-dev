@@ -1,6 +1,6 @@
 ---
 name: Agent Output Hygiene
-description: "Referenced by terminal-running subagents (GitReader, GitOps, CodeExecutor, TestRunner). Prevents tool-output spill loops when a tool result returns a file path instead of its content."
+description: "Spill-file contract for every agent and subagent: prevents tool-output spill loops when a tool result returns a file path instead of its content."
 ---
 
 # Agent Output Hygiene

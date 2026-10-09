@@ -71,6 +71,10 @@ mcp_codebase-memo_get_code_snippet({ "project": "<display_name>", "qualified_nam
 - **Delegate to `@WebResearcher`**: ONLY for external documentation, 3rd-party library APIs, or framework specifications.
 - **Do not delegate** for local codebase analysis.
 
+## Output Hygiene
+
+Follow [agent-output-hygiene](../rules/agent-output-hygiene.instructions.md): bound each result at the source, read a spilled file with `read` (never a shell), and return a compact summary.
+
 ## Output
 
 Report findings directly and concisely as a message without rigid boilerplate. Include:
