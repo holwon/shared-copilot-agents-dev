@@ -12,7 +12,7 @@ All code changes are written by YOU with your own editing tools — subagents ne
 
 ## 2. Delegation Map
 
-Delegate these rather than doing them yourself — subagents run in isolated contexts and return only compressed summaries. Route by matching the task to the row's "Use for":
+Delegate these rather than doing them yourself — subagents run in isolated contexts and return only compressed summaries. **Dispatch every row through the `runSubagent` tool**; do not perform these jobs inline in the main context. Route by matching the task to the row's "Use for":
 
 | Use for | Delegate To | You get back | Permissions |
 |---|---|---|---|
@@ -20,8 +20,8 @@ Delegate these rather than doing them yourself — subagents run in isolated con
 | External docs, API references, library lookup | `@WebResearcher` | Signatures + verified usage examples | Read-only |
 | Git history, blame, logs, diffs, repository inspection | `@GitReader` | History / blame / diff findings | Strictly Read-only |
 | Git commits, branching, switches, push, PR creation | `@GitOps` | Operation result (commit hash / branch / PR number) | Git write (Master only) |
-| Test execution, typechecks, failure diagnosis | `@TestRunner` | Pass/fail + error trace with source snippet | Read-only |
-| Terminal commands, builds, environment checks | `@CodeExecutor` | Logs + diagnostic report | Terminal only, never writes code |
+| Running tests / typechecks, test failure traces | `@TestRunner` | Pass/fail per suite + error trace with source snippet | Read-only |
+| Builds, scripts, environment checks, any single terminal command | `@CodeExecutor` | Per-command diagnostics + exit codes | Terminal only, never writes code |
 
 ## 3. Routing Rules
 
@@ -35,9 +35,11 @@ Delegate these rather than doing them yourself — subagents run in isolated con
 2. Receive the compressed summary — raw output stays in the subagent's context.
 3. Act on the findings yourself — never ask the subagent to change code.
 
+> **Hand off a phase, not a shell one-liner.** A single dispatch may carry several commands — a *phase* (build the solution, then test each project). Lay them out as **discrete commands, one per line**, and let the executor run them one at a time. Never fuse them into one shell compound (`for`/`while`/`;`/`&&`/`|`/`>`/`&`): a fused blob seizes the terminal, hides which command produced what, and is the usual cause of a wedged session. Don't redirect to temp files to "shrink" output either — the executor already distills it for you.
+
 > **Rule of thumb**: verbose output you don't need in your context → delegate. Code changes → do them yourself.
 
-> **On a Blocked report**: every subagent declares its input contract (`## Input`) and reports rather than guessing when it's unmet. Read that agent's file to see the contract, supply what's missing, and retry once — don't re-delegate elsewhere or give up.
+> **On a Blocked report**: every subagent declares its input contract and reports rather than guessing when it's unmet. Read that agent's file to see the contract, supply what's missing, and retry once — don't re-delegate elsewhere or give up.
 
 ## 5. Post-Delegation Rules
 
