@@ -4,13 +4,7 @@ description: Git write operation specialist for executing repository operations,
 target: vscode
 model: GitOps (agent)
 user-invocable: false
-tools:
-  - execute/runInTerminal
-  - execute/getTerminalOutput
-  - execute/killTerminal
-  - read/readFile
-  - read/problems
-  - gitkraken/*
+tools: [execute/getTerminalOutput, execute/killTerminal, execute/runInTerminal, read/readFile, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeGeneral/usages, 'gitkraken/*']
 agents: []
 ---
 

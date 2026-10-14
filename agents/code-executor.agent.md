@@ -3,7 +3,7 @@ name: CodeExecutor
 description: High-signal terminal execution subagent for builds, tests, scripts, and background processes. Filters out verbose terminal noise and returns distilled diagnostics and exit codes.
 target: vscode
 user-invocable: false
-tools: [execute/getTerminalOutput, execute/killTerminal, execute/runInTerminal, execute/sendToTerminal, read/problems, read/readFile]
+tools: [execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runInTerminal, execute/runTests, execute/testFailure, read/problems, read/readFile, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeTasks/problems, vscodeGeneral/usages, vscodeGeneral/runTests, vscodeGeneral/testFailure]
 agents: []
 model: CodeExecutor (agent)
 ---

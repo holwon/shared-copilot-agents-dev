@@ -4,13 +4,7 @@ description: Read-only Git history, blame, diff, log, and repository state inspe
 target: vscode
 model: GitReader (agent)
 user-invocable: false
-tools:
-  - execute/runInTerminal
-  - execute/getTerminalOutput
-  - execute/killTerminal
-  - read/readFile
-  - read/problems
-  - gitkraken/*
+tools: [execute/getTerminalOutput, execute/killTerminal, execute/runInTerminal, read/readFile, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeGeneral/usages, 'gitkraken/*']
 agents: []
 ---
 
